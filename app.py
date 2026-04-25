@@ -82,4 +82,4 @@ else:
     
 # --- 4. PIED DE PAGE ---
 st.markdown("---")
-st.caution("Projet Academique INF 232 EC2 - Analyse & Collecte De Donnees Agricoles 🇨🇲")    
+st.info("Projet Academique INF 232 EC2 - Analyse & Collecte De Donnees Agricoles 🇨🇲")    
