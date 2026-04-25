@@ -22,7 +22,7 @@ def load_data():
 # --- 2. BARRE LATÉRALE (SAISIE) ---
 st.sidebar.header("🖊️ Saisie des données")
 with st.sidebar.form("form_collecte"):
-    culture = st.selectbox("🌱 Culture", ["Maïs 🌽", "Tomate", "Pasteque", "Café ☕", "Riz 🍚"])
+    culture = st.selectbox("🌱 Culture", ["Maïs 🌽", "Tomate 🍅", "Pasteque 🍉", "Café ☕", "Riz 🍚"])
     marche = st.selectbox("📍 Marché de vente", ["Marché Central", "Mfoundi", "Mokolo", "Etoudi"])
     prix = st.number_input("💰 Prix (FCFA/t)", min_value=0, step=500)
     date = st.date_input("📅 Date de vente")
@@ -41,7 +41,7 @@ with st.sidebar.form("form_collecte"):
         st.sidebar.success("✅ Donnée enregistrée !")
 
 # --- 3. ZONE PRINCIPALE ---
-st.title("🌾 AgroCam : Analyse & Collecte De Donnees Agricoles")
+st.title("🌾 AgroCam : Analyse & Collecte De Donnees Agricoles 🇨🇲")
 df = load_data()
 
 if not df.empty and 'Date' in df.columns:
@@ -82,4 +82,4 @@ else:
     
 # --- 4. PIED DE PAGE ---
 st.markdown("---")
-st.info("Projet Academique INF 232 EC2 - Analyse & Collecte De Donnees Agricoles")    
+st.caution("Projet Academique INF 232 EC2 - Analyse & Collecte De Donnees Agricoles 🇨🇲")    
