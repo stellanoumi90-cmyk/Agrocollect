@@ -22,8 +22,7 @@ def load_data():
 # --- 2. BARRE LATÉRALE (SAISIE) ---
 st.sidebar.header("🖊️ Saisie des données")
 with st.sidebar.form("form_collecte"):
-    nom_agriculteur =
-st.text_input("👤 Nom de l'agriculteur")
+    nom_agriculteur = st.text_input("👤 Nom de l'agriculteur")
     culture = st.selectbox("🌱 Culture", ["Maïs 🌽", "Tomate 🍅", "Pasteque 🍉", "Café ☕", "Riz 🍚"])
     marche = st.selectbox("📍 Marché de vente", ["Marché Central", "Mfoundi", "Mokolo", "Etoudi", "Mendong", "Melen", "Marché Ebolowa", "Marché Dschang", "Marché Garoua"])
     prix = st.number_input("💰 Prix (FCFA/t)", min_value=0, step=500)
