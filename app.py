@@ -23,7 +23,7 @@ def load_data():
 st.sidebar.header("🖊️ Saisie des données")
 with st.sidebar.form("form_collecte"):
     culture = st.selectbox("🌱 Culture", ["Maïs 🌽", "Tomate 🍅", "Pasteque 🍉", "Café ☕", "Riz 🍚"])
-    marche = st.selectbox("📍 Marché de vente", ["Marché Central", "Mfoundi", "Mokolo", "Etoudi"])
+    marche = st.selectbox("📍 Marché de vente", ["Marché Central", "Mfoundi", "Mokolo", "Etoudi", "Mendong", "Melen", "Marché Ebolowa", "Marché Dschang", "Marché Garoua"])
     prix = st.number_input("💰 Prix (FCFA/t)", min_value=0, step=500)
     date = st.date_input("📅 Date de vente")
     surface = st.number_input("📏 Surface (ha)", min_value=0.1, step=0.1)
