@@ -17,11 +17,13 @@ def load_data():
         except:
             pass
     # Retourne une structure propre si le fichier est absent ou corrompu
-    return pd.DataFrame(columns=["Culture", "Surface (ha)", "Engrais (kg)", "Rendement (t)", "Marché", "Prix (FCFA)", "Date"])
+    return pd.DataFrame(columns=["Agriculteur", "Culture", "Surface (ha)", "Engrais (kg)", "Rendement (t)", "Marché", "Prix (FCFA)", "Date"])
 
 # --- 2. BARRE LATÉRALE (SAISIE) ---
 st.sidebar.header("🖊️ Saisie des données")
 with st.sidebar.form("form_collecte"):
+    nom_agriculteur =
+st.text_input("👤 Nom de l'agriculteur")
     culture = st.selectbox("🌱 Culture", ["Maïs 🌽", "Tomate 🍅", "Pasteque 🍉", "Café ☕", "Riz 🍚"])
     marche = st.selectbox("📍 Marché de vente", ["Marché Central", "Mfoundi", "Mokolo", "Etoudi", "Mendong", "Melen", "Marché Ebolowa", "Marché Dschang", "Marché Garoua"])
     prix = st.number_input("💰 Prix (FCFA/t)", min_value=0, step=500)
@@ -34,8 +36,8 @@ with st.sidebar.form("form_collecte"):
         df = load_data()
         # On convertit la date en texte pour éviter les erreurs de format lors de la sauvegarde
         date_str = date.strftime("%Y-%m-%d")
-        new_row = pd.DataFrame([[culture.split(' ')[0], surface, engrais, rendement, marche, prix, date_str]], 
-                               columns=["Culture", "Surface (ha)", "Engrais (kg)", "Rendement (t)", "Marché", "Prix (FCFA)", "Date"])
+        new_row = pd.DataFrame([[nom_agriculteur, culture.split(' ')[0], surface, engrais, rendement, marche, prix, date_str]], 
+                               columns=["Agriculteur", "Culture", "Surface (ha)", "Engrais (kg)", "Rendement (t)", "Marché", "Prix (FCFA)", "Date"])
         df = pd.concat([df, new_row], ignore_index=True)
         df.to_csv(DATA_FILE, index=False)
         st.sidebar.success("✅ Donnée enregistrée !")
